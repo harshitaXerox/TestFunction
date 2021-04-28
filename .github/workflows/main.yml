@@ -15,8 +15,11 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACTDEMO_PH }}'
           projectId: firstprojfirebase
           channelId: live
+          if: env.SONARCLOUD_SCAN_VARIABLE == '1'
+          
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
 env:
  GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
- SONAR_TOKEN: '${{ secrets.SONAR_TOKEN }}'                                                          
+ SONAR_TOKEN: '${{ secrets.SONAR_TOKEN }}' 
+ SONARCLOUD_SCAN_VARIABLE: '${{ secrets.SSONARCLOUD_SCAN_VARIABLE }}' 
