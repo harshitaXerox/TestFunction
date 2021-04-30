@@ -21,8 +21,7 @@ jobs:
         with:
          if: env.SONARCLOUD_SCAN_VARIABLE = '1'
              scan=true
-             else
-             scan=false
+            version=4.6.1.2450            
              
 env:
  GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
